@@ -31,6 +31,7 @@ This program implements pixel sorting based on brightness thresholding on an ima
 4. **Interact with the Program**: 
    - Use the 'a' and 'd' keys to adjust the brightness threshold level by decreasing or increasing it by 10 units, respectively.
    - Press the 'b' key to toggle between displaying the original image and the processed image.
+   - Press the 's' key to save the processed image as a jpg file.
 
 ## Details
 
