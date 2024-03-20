@@ -1,6 +1,6 @@
 # Pixel Sorting based on Brightness Threshold
 
-![Example](SortedImage140.jpg)
+![Example](sample.gif)
 
 This program implements pixel sorting based on brightness thresholding on an image using the Processing language. It provides functionalities to adjust the brightness threshold level interactively and toggle between displaying the original image and the processed image.
 
