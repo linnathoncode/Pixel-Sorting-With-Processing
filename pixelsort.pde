@@ -2,7 +2,7 @@ PImage deer;
 PImage img;
 PImage temp;
 boolean brMap = false;
-int brightLevel = 140;
+int brightLevel = 80;
 
 void setup() {
   size(1280, 720);
