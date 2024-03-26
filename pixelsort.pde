@@ -2,6 +2,7 @@ PImage deer;
 PImage img;
 PImage temp;
 boolean brMap = false;
+int preBright = -1;
 int brightLevel = 80;
 
 void setup() {
@@ -58,29 +59,38 @@ boolean pixelSort() {
 }
 
 void keyPressed() {
-  if (key == 'a') {
-    if (brightLevel > 0)
-      brightLevel -= 10;
-  } else if (key == 'd') {
-    if (brightLevel < 240)
-      brightLevel += 10;
-  }
-  if (key == 'b') {
-    brMap = !brMap;
-  } else {
-    change_levels();
-    print(brightLevel + " ");
-    img.updatePixels();
-    pixelSort();
-    deer.updatePixels();
-  }
-  if(key == 's') { 
-    var fileName = "SortedImage"+ brightLevel + ".jpg";
-    save(fileName);
-    print("Image saved as " + fileName + "\n");
-  }
-}
+  switch(key){
+    case 'a':
+     if (brightLevel > 0)
+        brightLevel -= 10;
+     break; 
+     
+    case 'd':
+        if (brightLevel < 240)
+        brightLevel += 10;
+        break;
 
+    case 's':
+        var fileName = "SortedImage"+ brightLevel + ".jpg";
+        save(fileName);
+        print("Image saved as " + fileName + "\n");
+        break;
+
+     case 'b':
+        brMap = !brMap;
+        break;
+       
+  }  
+if(preBright != brightLevel){
+  change_levels();
+  print(brightLevel + " ");
+  img.updatePixels();
+  pixelSort();
+  deer.updatePixels();
+}
+preBright = brightLevel;
+ 
+}  
 void quickSort(color arr[], int left, int right) {
   int i = left;
   int j = right;
